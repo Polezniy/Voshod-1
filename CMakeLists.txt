@@ -17,13 +17,13 @@ add_library(voshod
 
 if(MSVC)
   include_directories(
-  	  contrib/msvc-windows-x86/glew/inlcude
-	  contrib/msvc-windows-x86/SDL2/inlcude
+  	  contrib/msvc-windows-x86/glew/include
+	  contrib/msvc-windows-x86/SDL2/include
   )
 
 link_directories(
-   ${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x86/glew/inlcude
-   ${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x86/SDL2/inlcude
+   ${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x86/glew/lib
+   ${CMAKE_SOURCE_DIR}/contrib/msvc-windows-x86/SDL2/lib
 )
 endif()
 
