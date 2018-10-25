@@ -1,16 +1,16 @@
 #include "Entity.h"
 
-namespace myengine
+namespace voshod
 {
 
-	std::shared_ptr<Core> Entity::getCore()
+	/*std::shared_ptr<Core> Entity::getCore()
 	{
 		return core.lock();
-	}
-
+	}*/
+	
 	void Entity::tick()
 	{
-		for (std::vector<std::shared_ptr<Component> >::iterator it = components.begin();
+		for (auto it = components.begin();
 			it != components.end(); it++)
 		{
 			if (!(*it)->began)
@@ -25,7 +25,7 @@ namespace myengine
 
 	void Entity::display()
 	{
-		for (std::vector<std::shared_ptr<Component> >::iterator it = components.begin();
+		for (auto it = components.begin();
 			it != components.end(); it++)
 		{
 			(*it)->onDisplay();

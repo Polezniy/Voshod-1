@@ -5,22 +5,22 @@
 
 namespace voshod
 {
-	class Entity;
+	//class Entity;
 
 	class Core
 	{
 	public:
 
-		static std::shared_ptr<Core> initialize();
+		//static std::shared_ptr<Core> initialize();
 
 		void start();
-		void stop();
-		std::shared_ptr<Entity> addEntity();
+		//void stop();
+		//std::shared_ptr<Entity> addEntity();
 
 	private:
-		// entities
+
 		bool running;
-		std::vector<std::shared_ptr<Entity> > entities;
+		std::vector<std::shared_ptr<Entity> > entities; // Storing a number of entities in Core
 		std::weak_ptr<Core> self;
 
 		SDL_Window *window;
