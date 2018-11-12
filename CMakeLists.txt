@@ -27,7 +27,7 @@ add_executable(game
 )
 
 add_library(voshod
- # src/voshod/Component.cpp
+  src/voshod/Component.cpp
   src/voshod/Core.cpp
   src/voshod/Entity.cpp
  # src/voshod/MeshRenderer.cpp
@@ -40,7 +40,7 @@ if(MSVC)
  target_link_libraries(game
     SDL2
     glew32
-	opengl32
+    opengl32
 )
 else()
  target_link_libraries(game
