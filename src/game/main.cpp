@@ -1,13 +1,12 @@
 #include <SDL2/SDL.h>
 #include <GL/glew.h>
 
+#include <voshod/voshod.h>
 #include <exception>
-
-#define WINDOW_WIDTH 640
-#define WINDOW_HEIGHT 480
 
 int main(int argc, char *argv[])
 {
+
 	if (SDL_Init(SDL_INIT_VIDEO) < 0)
 	{
 		throw std::exception();
@@ -26,8 +25,6 @@ int main(int argc, char *argv[])
 	{
 		throw std::exception();
 	}
-
-
 
 	const GLfloat positions[] = { // Primitive shape data
 		0.0f, 0.5f, 0.0f,

@@ -3,9 +3,13 @@
 #include <memory>
 #include <vector>
 
+#define WINDOW_HEIGHT 640
+#define WINDOW_WIDTH 480
+
+
 namespace voshod
 {
-	//class Entity;
+	class Entity; // Forward declare
 
 	class Core
 	{

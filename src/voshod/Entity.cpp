@@ -13,12 +13,6 @@ namespace voshod
 		for (auto it = components.begin();
 			it != components.end(); it++)
 		{
-			if (!(*it)->began)
-			{
-				(*it)->onBegin();
-				(*it)->began = true;
-			}
-
 			(*it)->onTick();
 		}
 	}

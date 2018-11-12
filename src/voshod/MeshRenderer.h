@@ -1,4 +1,4 @@
-#include "Component.h"
+/*#include "Component.h"
 
 #include <memory>
 
@@ -22,3 +22,4 @@ private:
 };
 
 }
+*/

@@ -1,4 +1,11 @@
 #include "Component.h"
+#include <iostream>
 
-~Component::Component  { }
-void component::onTick() { }
+namespace voshod
+{
+	Component::~Component(){ }
+	void Component::onTick() { }
+	void Component::onBegin() { }
+	void Component::onInit() { }
+	void Component::onDisplay() { }
+}
