@@ -6,7 +6,7 @@
 #include <fstream>
 #include <iostream>
 
-namespace myengine
+namespace voshod // To avoid collision with other libraries 
 {
 
 ShaderProgram::ShaderProgram(std::string vert, std::string frag)

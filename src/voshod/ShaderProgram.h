@@ -3,7 +3,7 @@
 
 #include <string>
 
-namespace myengine
+namespace voshod // To avoid collision with other libraries 
 {
 
 class VertexArray;

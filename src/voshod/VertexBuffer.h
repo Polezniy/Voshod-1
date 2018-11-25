@@ -3,7 +3,7 @@
 
 #include <vector>
 
-namespace myengine
+namespace voshod // To avoid collision with other libraries 
 {
 
 class VertexBuffer

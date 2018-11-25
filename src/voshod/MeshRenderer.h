@@ -1,8 +1,8 @@
-/*#include "Component.h"
+#include "Component.h"
 
 #include <memory>
 
-namespace myengine
+namespace voshod // To avoid collision with other libraries 
 {
 
 class VertexArray;
@@ -22,4 +22,3 @@ private:
 };
 
 }
-*/

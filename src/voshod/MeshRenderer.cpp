@@ -5,7 +5,7 @@
 
 #include <iostream>
 
-namespace myengine
+namespace voshod // To avoid collision with other libraries 
 {
 
 void MeshRenderer::onInit()

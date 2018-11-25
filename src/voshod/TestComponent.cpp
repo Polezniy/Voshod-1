@@ -1,7 +1,10 @@
 #include "TestComponent.h"
 #include <iostream>
 
-void TestComponent::onTick()
+namespace voshod
 {
-	std::cout << "tickz\n";
+	void TestComponent::onTick()
+	{
+		std::cout << "tickz\n";
+	}
 }

@@ -1,7 +1,12 @@
+#pragma once
+
 #include "Component.h"
 
-class TestComponent
+namespace voshod
 {
-public:
-	void onTick();
-};
+	class TestComponent : public Component
+	{
+	private:
+		void onTick();
+	};
+}

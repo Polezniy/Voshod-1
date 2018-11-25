@@ -5,7 +5,7 @@
 #include <string>
 #include <memory>
 
-namespace myengine
+namespace voshod // To avoid collision with other libraries 
 {
 
 class VertexBuffer;

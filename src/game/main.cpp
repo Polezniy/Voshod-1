@@ -1,32 +1,57 @@
-#include <SDL2/SDL.h>
-#include <GL/glew.h>
-
 #include <voshod/voshod.h>
-#include <exception>
 
-int main(int argc, char *argv[])
+#include <iostream>
+
+class Screen : public voshod::Component
 {
-
-	if (SDL_Init(SDL_INIT_VIDEO) < 0)
+public:
+	void onInit(std::string color)
 	{
-		throw std::exception();
+		//std::cout << "onInit " << color << std::endl;
+	}
+	void onBegin()
+	{
+		//std::cout << "onBegin" << std::endl;
 	}
 
-	SDL_Window *window = SDL_CreateWindow("Triangle",
-		SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-		WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
-
-	if (!SDL_GL_CreateContext(window))
+	void onTick()
 	{
-		throw std::exception();
+		//std::cout << "onTick" << std::endl;
 	}
 
-	if (glewInit() != GLEW_OK)
+	void onDisplay()
 	{
-		throw std::exception();
+		//std::cout << "onTick" << std::endl;
 	}
+};
 
-	const GLfloat positions[] = { // Primitive shape data
+class Transform : public voshod::Component
+{
+public:
+
+	int x, y, z;
+
+	//position
+
+	//rotation
+
+	//scale
+	
+};
+
+int main()
+{
+	std::shared_ptr<voshod::Core> c = voshod::Core::initialize();
+
+	std::shared_ptr<voshod::Entity> e = c->addEntity();
+
+	std::shared_ptr<Screen> s = e->addComponent<Screen>("Green");
+
+	c->start();
+
+	return 0;
+
+	/*const GLfloat positions[] = { // Primitive shape data
 		0.0f, 0.5f, 0.0f,
 		-0.5f, -0.5f, 0.0f,
 		0.5f, -0.5f, 0.0f
@@ -34,7 +59,7 @@ int main(int argc, char *argv[])
 
 	GLuint positionsVboId = 0;
 
-	// Creat a new VBO on the GPU and bind it
+	// Create a new VBO on the GPU and bind it
 	glGenBuffers(1, &positionsVboId);
 
 	if (!positionsVboId)
@@ -113,7 +138,6 @@ int main(int argc, char *argv[])
 	{
 		throw std::exception();
 	}
-
 	// Create new shader program and attach our shader objects
 	GLuint programId = glCreateProgram();
 	glAttachShader(programId, vertexShaderId);
@@ -140,39 +164,14 @@ int main(int argc, char *argv[])
 	glDeleteShader(fragmentShaderId);
 
 
+	// Instruct OpenGL to use our shader program and our VAO
+	glUseProgram(programId);
+	glBindVertexArray(vaoId);
+	// Draw 3 vertices (a triangle)
+	glDrawArrays(GL_TRIANGLES, 0, 3);
 
-	bool quit = false;
+	// Reset the state
+	glBindVertexArray(0);
+	glUseProgram(0);*/
 
-	while (!quit)
-	{
-		SDL_Event event = { 0 };
-
-		while (SDL_PollEvent(&event))
-		{
-			if (event.type == SDL_QUIT)
-			{
-				quit = true;
-			}
-		}
-
-		glClearColor(1.0f, 0.0f, 0.0f, 1.0f); // Setting OpenGL clear colour to red
-		glClear(GL_COLOR_BUFFER_BIT); // Clearing the screen
-
-		// Instruct OpenGL to use our shader program and our VAO
-		glUseProgram(programId);
-		glBindVertexArray(vaoId);
-		// Draw 3 vertices (a triangle)
-		glDrawArrays(GL_TRIANGLES, 0, 3);
-
-		// Reset the state
-		glBindVertexArray(0);
-		glUseProgram(0);
-
-		SDL_GL_SwapWindow(window);
-	}
-
-	SDL_DestroyWindow(window);
-	SDL_Quit();
-
-	return 0;
 }

@@ -4,10 +4,10 @@
 
 #include <memory>
 
-namespace voshod
+namespace voshod // To avoid collision with other libraries
 {
-	class Entity;
-	class Core;
+	class Entity; // Forward declare
+	class Core; // Forward declare
 
 	class Component
 	{

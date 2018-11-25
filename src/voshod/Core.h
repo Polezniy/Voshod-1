@@ -3,11 +3,7 @@
 #include <memory>
 #include <vector>
 
-#define WINDOW_HEIGHT 640
-#define WINDOW_WIDTH 480
-
-
-namespace voshod
+namespace voshod // To avoid collision with other libraries 
 {
 	class Entity; // Forward declare
 
@@ -15,15 +11,16 @@ namespace voshod
 	{
 	public:
 
-		//static std::shared_ptr<Core> initialize();
+		static std::shared_ptr<Core> initialize();
+		std::shared_ptr<Entity> addEntity();
 
 		void start();
-		//void stop();
-		//std::shared_ptr<Entity> addEntity();
-
+		void stop();
+	
 	private:
 
 		bool running;
+
 		std::vector<std::shared_ptr<Entity> > entities; // Storing a number of entities in Core
 		std::weak_ptr<Core> self;
 

@@ -1,7 +1,7 @@
 #include "VertexArray.h"
 #include "VertexBuffer.h"
 
-namespace myengine
+namespace voshod // To avoid collision with other libraries 
 {
 
 VertexArray::VertexArray() : dirty(false)

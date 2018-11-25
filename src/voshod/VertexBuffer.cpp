@@ -1,6 +1,6 @@
 #include "VertexBuffer.h"
 
-namespace myengine
+namespace voshod // To avoid collision with other libraries 
 {
 
 VertexBuffer::VertexBuffer() : components(0), dirty(false)
